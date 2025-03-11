@@ -1,0 +1,26 @@
+/*
+ * Copyright (c) 2025 iTE Tech. Inc.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/* redefine reg property the evb chip has 128k dlm, please modify it accordingly */
+&sram0 {
+    /delete-property/ reg;
+    reg = <0x800000 DT_SIZE_K(128)>;
+};
+
+/* Choose uart2 to be debug port, please modify it accordingly */
+/ {
+	chosen {
+		zephyr,console = &uart2;
+		zephyr,shell-uart = &uart2;
+	};
+};
+
+&uart2 {
+	status = "okay";
+	current-speed = <115200>;
+	clock-frequency = <1843200>;
+};
+

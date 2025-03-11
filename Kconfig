@@ -1,0 +1,13 @@
+# Copyright (c) 2024 ITE Corporation. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Kconfig options for kb_example
+#
+
+config ITE_EC_KBD_DBG
+    bool "ITE EC Keyboard Thread Debug Enable"
+
+config ITE_KBD_HOOK_EVENT_THREAD
+    bool "ITE EC Keyboard Scan Event/Thread Hookup"
+
+source "Kconfig.zephyr"
