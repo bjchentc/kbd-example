@@ -8,3 +8,5 @@ target_sources(app
     src/main.c
     )
 
+include_directories(app
+    PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src)

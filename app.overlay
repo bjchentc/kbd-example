@@ -15,6 +15,7 @@
 	chosen {
 		zephyr,console = &uart2;
 		zephyr,shell-uart = &uart2;
+		ec,keyboard = &kbd;
 	};
 };
 
@@ -24,3 +25,13 @@
 	clock-frequency = <1843200>;
 };
 
+&kbd {
+	/* row-size = <8>; */
+	/* col-size = <16>;*/
+	actual-key-mask = <0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff
+						0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff>;
+	/* poll-period-ms = <5>; */
+	/* debounce-down-ms = <40>; */
+	/* debounce-up-ms = <80>; */
+	/* poll-timeout-ms = <500>; */
+};
