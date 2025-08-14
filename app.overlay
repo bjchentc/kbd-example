@@ -1,0 +1,37 @@
+/*
+ * Copyright (c) 2025. All Rights Reserved.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/* Redefine reg property; the chip has 128k DLM, please modify it accordingly */
+&sram0 {
+    /delete-property/ reg;
+    reg = <0x800000 DT_SIZE_K(128)>;
+};
+
+/* Choose uart2 to be debug port, please modify it accordingly */
+/ {
+    chosen {
+        zephyr,console = &uart2;
+        zephyr,shell-uart = &uart2;
+        ec,keyboard = &kbd;
+    };
+};
+
+&uart2 {
+    status = "okay";
+    current-speed = <115200>;
+    clock-frequency = <1843200>;
+};
+
+&kbd {
+    /* row-size = <8>; */
+    /* col-size = <16>; */
+    actual-key-mask = <0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff
+                       0xff 0xff 0xff 0xff 0xff 0xff 0xff 0xff>;
+    /* poll-period-ms = <5>; */
+    /* debounce-down-ms = <40>; */
+    /* debounce-up-ms = <80>; */
+    /* poll-timeout-ms = <500>; */
+};

@@ -1,0 +1,13 @@
+# Copyright (c) 2024. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+#
+# Kconfig options for kb_example
+#
+
+config EC_KBD_DBG
+    bool "EC Keyboard Thread Debug Enable"
+
+config EC_KBD_HOOK_EVENT_THREAD
+    bool "EC Keyboard Scan Event/Thread Hookup"
+
+source "Kconfig.zephyr"
